@@ -1,17 +1,19 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
 
-const {DataTypes} = new Sequelize;
+const {DataTypes} = Sequelize;
 
-const Product = db.define("product",{
+const Product = db.define('product',{
     name: DataTypes.STRING,
     image: DataTypes.STRING,
     url: DataTypes.STRING
+
 },{
-    freezeTableName: true
+    freezeTableName:true
 });
 
-export default Product
+export default Product;
+
 
 (async()=>{
     await db.sync();
