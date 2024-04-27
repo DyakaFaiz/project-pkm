@@ -10,5 +10,6 @@ app.use(cors());
 app.use(express.json());
 app.use(FileUpload());
 app.use(ProductRoute);
+app.use(express.static("public"));
 
 app.listen(port,()=> console.log("server running at port ", port))
